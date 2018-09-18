@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <style>
+    	form{
+    		width: 960px;
+    	}
+    	.container-fluid{
+    		padding: 50px;
+    		background-color:whitesmoke;
+    		width: 1100px;
+    		border-radius: 10px;
+    		margin-top: 50px;
+    	}
+    </style>
+    <title>show</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+    	<div>
+      	<h1>{{travel.destination}}</h1>
+      	<p>planned by:{{travel.creator.name}}</p>
+      	<p>Description:{{travel.description}}</p>
+      	<p>Travel Date From:{{travel.travelstart}}</p>
+      	<p>Travel Date To:{{travel.travelend}}</p>
+    	</div>
+    	<br>
+    	<h1>Other Users Joining the Trip</h1>
+    	{%for other in others%}
+    	<p>{{other.joiner.name}}</p>
+    	{%endfor%}
+
+    	<br>
+      <a href="/">Home</a>
+      <a href="/logout">| logout</a>
+      <a href="/travel">| view travel</a>
+
+    </div>
+
+  </body>
+</html>
